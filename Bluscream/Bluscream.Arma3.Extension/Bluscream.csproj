@@ -8,8 +8,8 @@
     <ProjectGuid>{B78DACF8-6226-46AE-9028-02C6EC837404}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RealTimeAndWeather</RootNamespace>
-    <AssemblyName>RealTimeAndWeather</AssemblyName>
+    <RootNamespace>Bluscream</RootNamespace>
+    <AssemblyName>Bluscream</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

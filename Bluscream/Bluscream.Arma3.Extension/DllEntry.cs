@@ -4,8 +4,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Runtime.InteropServices;
+using System.Text;
 
-namespace RealTimeAndWeather
+namespace Bluscream
 {
     public class DllEntry
     {
@@ -85,6 +87,14 @@ namespace RealTimeAndWeather
             }
         }*/
 
+        
+
+        [DllImport("ProcCmdLine32.dll", CharSet = CharSet.Unicode, EntryPoint = "GetProcCmdLine")]
+        public extern static bool GetProcCmdLine32(uint nProcId, StringBuilder sb, uint dwSizeBuf);
+
+        [DllImport("ProcCmdLine64.dll", CharSet = CharSet.Unicode, EntryPoint = "GetProcCmdLine")]
+        public extern static bool GetProcCmdLine64(uint nProcId, StringBuilder sb, uint dwSizeBuf);
+
         #region Public Methods
 
         [ArmaDllExport]
@@ -118,6 +128,9 @@ namespace RealTimeAndWeather
                             DoubleFromPercent(weather.clouds.all).ToString(), // 1 setOvercast weather select 2;
                             DoubleFromPercent(weather.main.humidity).ToString() // 1 setRain weather select 3;
                         }); // forceWeatherChange;
+                    case "blu_fnc_getloadedmods":
+
+                        return ret;
                 }
 
                 ret = "[blu] Unknown command: " + input;

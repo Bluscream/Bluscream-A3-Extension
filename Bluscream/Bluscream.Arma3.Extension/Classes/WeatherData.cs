@@ -1,4 +1,4 @@
-﻿namespace RealTimeAndWeather.Classes
+﻿namespace Bluscream.Classes
 {
     public class WeatherData
     {
